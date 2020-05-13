@@ -1,23 +1,44 @@
-package fr.uvsq.uvsq21600767;
+package uvsq21602357.pglp;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class PersonnelComposite implements PersonnelInterface{
-	    private List<Personnel> personnelsList = new ArrayList<Personnel>();
+public class PersonnelComposite  extends PersonnelType implements Iterable<PersonnelType> {
+    private List<PersonnelType> Personnel;
+    private int identifiant;
+    
+       public void add(final PersonnelType personnel) {
+              this.Personnel.add(personnel);
+          }
+       public PersonnelComposite(final int idGroupe) {
+              this.Personnel = new ArrayList<PersonnelType>();
+              this.identifiant = idGroupe;
+       }
+       public void remvoe(final PersonnelType personnel) {
+              this.Personnel.remove(personnel);
+       }
+    public List<PersonnelType> getAllPersonnel() {
+           return this.Personnel;
+    }
+       @Override
+       public boolean EstUnGroupe() {
 
-	    public void add(Personnel personnel){
-	        personnelsList.add(personnel);
-	    }
+              return true;
+     }
 
-	    public void remove(Personnel personnel){
-	        personnelsList.remove(personnel);
-	    }
+       public Iterator<PersonnelType> iterator() {
 
-	    @Override
-	    public void print() {
-	        for(Personnel personnel : personnelsList){
-	            System.out.println(personnel);
-	        }
-	    }
+              return Personnel.listIterator();
+       }
+       public GroupeIt groupeIteration() {
+              return new GroupeIt(this);
+       }
+       public HierarchieIt hierachical() {
+              return new HierarchieIt(this);
+       }
+       @Override
+       public String toString() {
+              return "identifiant " + this.identifiant;
+       }
 }
