@@ -32,11 +32,18 @@ public abstract class PersonnelTypeIterator implements Iterator<PersonnelType> {
           }
           else {
         	  PersonnelType typePersonnel = getCollectionItems();
-    		  if (typePersonnel.EstUnGroupe() != false) {
-    		     getPersonnelCollection().addAll(((PersonnelComposite) typePersonnel).
-    		               getAllPersonnel());
-    		  }
-    		  return typePersonnel;
+        	  if(typePersonnel != null) {
+        		  if (typePersonnel.EstUnGroupe() != false) {
+         		     getPersonnelCollection().addAll(((PersonnelComposite) typePersonnel).getAllPersonnel());
+         		  }
+         		  return typePersonnel;
+
+        	  }
+        	  else {
+        		  System.out.println("Erreur");
+        		  return typePersonnel;
+        	  }
+    		 
           }
     }
     
