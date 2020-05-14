@@ -1,4 +1,4 @@
-package uvsq21602357.pglp;
+package uvsq21602357;
 
 
 public abstract class PersonnelType {
