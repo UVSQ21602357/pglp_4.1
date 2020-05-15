@@ -18,7 +18,7 @@ public class MainTest {
 	Personnel p1 = new Personnel.PersonelBuilder("Martin", "Jean", "Employé").build();
 	assertEquals(p1.getPrenom(), "Jean");
 	assertEquals(p1.getNom(), "Martin");
-	assertEquals(p1.getemploi(), "Employé");
+	assertEquals(p1.getFonction(), "Employé");
 	
 	}
 	@Test
