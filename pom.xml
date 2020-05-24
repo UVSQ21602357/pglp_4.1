@@ -63,7 +63,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>fr.uvsq.uvsq21600767.Main</mainClass>
+              <mainClass>fr.uvsq.uvsq21602357.Main</mainClass>
             </manifest>
           </archive>
         </configuration>
